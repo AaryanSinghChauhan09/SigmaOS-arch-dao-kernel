@@ -1,10 +1,19 @@
 // Integration test for SigmaOS-arch-dao-kernel
 // Verifies the crate builds and links as a dependency.
-#![allow(unused_imports)]
 
-use arch_dao_kernel as _;
+use sigmaos_arch_dao_kernel::{DaoKernel, Entity, EntityId};
 
 #[test]
 fn crate_links_and_runs() {
-    assert_eq!(2 + 2, 4);
+    // Arrange
+    let mut dao = DaoKernel::new();
+    let mut entity = Entity::new(EntityId::new("1"), "users");
+    entity.set("name", "Test");
+
+    // Act
+    let res = dao.insert(entity);
+
+    // Assert
+    assert!(res.is_ok());
+    assert_eq!(dao.list_tables().len(), 1);
 }

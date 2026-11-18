@@ -1,16 +1,16 @@
 [component]
 name = "SigmaOS-arch-dao-kernel"
 tier = 2
-stability = "scaffold"
+stability = "beta"
 language = "rust"
-description = "GitHub description is a placeholder; component scope remains unclassified."
+description = "DAO kernel with data access abstraction, CRUD operations, and transactions"
 upstream = []
 
 [contract]
-provides = ["component"]
+provides = ["data-access", "crud-operations", "transaction-management"]
 depends_on = []
 
 [maturity]
-status = "Scaffold"
-test_evidence = "Compiles and passes AAA unit tests"
-next_milestone = "Hardware and runtime integration"
+status = "Implemented"
+test_evidence = "cargo test --offline unit tests pass"
+next_milestone = "Actual database backend integration and connection pooling"

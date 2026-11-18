@@ -1,10 +1,13 @@
 [package]
-name = "arch-dao-kernel"
+name = "sigmaos-arch-dao-kernel"
 version = "0.1.0"
 edition = "2021"
-description = "SigmaOS SigmaOS-arch-dao-kernel component - Inspired by Arch Linux and Debian"
+description = "DAO kernel for SigmaOS"
 license = "MIT"
 repository = "https://github.com/AaryanSinghChauhan09/SigmaOS-arch-dao-kernel"
 
 [dependencies]
-thiserror = "2"
+
+[lib]
+name = "sigmaos_arch_dao_kernel"
+path = "src/lib.rs"
